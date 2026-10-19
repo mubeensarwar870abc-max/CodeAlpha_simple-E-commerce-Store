@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+/* Hero entrance animation */
+
+/* Hero entrance animation */
+
+.hero-content-animate {
+  opacity: 0;
+  animation: heroContentEnter 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: left center;
+  will-change: transform, opacity;
+}
+
+.hero-image-animate {
+  opacity: 0;
+  animation: heroImageEnter 1s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+@keyframes heroContentEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw) scale(0.7);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateX(25px) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes heroImageEnter {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw) scale(0.7);
+  }
+
+  65% {
+    opacity: 1;
+    transform: translateX(-20px) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-content-animate,
+  .hero-image-animate {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
